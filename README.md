@@ -1,0 +1,1 @@
+# suwon.mma.mjbinfo
