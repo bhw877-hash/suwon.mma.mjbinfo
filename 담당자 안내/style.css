@@ -1,0 +1,120 @@
+/* --- 기본 스타일 초기화 --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* 폰트 정의 */
+@font-face { font-family: 'NexonMaplestory_l'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'NexonMaplestory_b'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'GMarketSans_l'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'GMarketSans_m'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'GMarketSans_b'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight: 700; font-display: swap; }
+
+/* --- 헤더 영역 --- */
+header {
+    background-color: #003762; padding: 1.5rem 0; text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+}
+.header-content { display: flex; align-items: center; justify-content: center; gap: 15px; }
+.header-content img { height: 35px; }
+header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
+.header-link { color: white; }
+
+/* --- 컨테이너 & 공통 스타일 --- */
+.container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+.section-card {
+    background: white; padding: 2rem; border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 2rem;
+}
+.sub-header {
+    margin-bottom: 20px; border-bottom: 2px solid #e1e1e1; padding-bottom: 15px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.sub-title { font-family: 'GMarketSans_b', sans-serif; color: #003762; font-size: 1.6rem; }
+.home-btn {
+    font-size: 0.9rem; color: #555; background: #e9ecef; padding: 8px 12px;
+    border-radius: 6px; font-weight: bold; transition: 0.2s; font-family: 'GMarketSans_m', sans-serif;
+}
+.home-btn:hover { background: #dee2e6; color: #003762; }
+.recruit-intro-text p {
+    font-family: 'GMarketSans_m', sans-serif; color: #555; font-size: 1.05rem;
+    margin-bottom: 30px; word-break: keep-all;
+}
+.highlight { color: #E4032E; font-size: 1.05rem; font-family: 'GMarketSans_b', sans-serif; }
+
+/* --- 메인 페이지 스타일 --- */
+.intro-section { background: white; padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.intro-section h2 { color: #003762; margin-bottom: 1rem; font-size: 1.4rem; font-family: 'NexonMaplestory_l', sans-serif; }
+.grid-label { font-size: 1.2rem; color: #333; margin: 30px 0 15px 0; padding-left: 12px; border-left: 5px solid #003762; font-weight: 700; font-family: 'GMarketSans_b', sans-serif; }
+.button-grid { display: grid; gap: 10px; }
+.shortcut-btn {
+    display: flex; align-items: center; justify-content: space-between;
+    background-color: white; padding: 1.2rem 1.5rem; border-radius: 12px;
+    border: 1px solid #e1e1e1; color: #333; transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03); min-height: 60px;
+}
+.shortcut-btn:hover { background-color: #f8fbff; transform: translateX(5px); border-color: #003762; }
+.shortcut-btn .icon { font-size: 1.4rem; margin-right: 15px; }
+.shortcut-btn .text { font-size: 1.1rem; font-weight: 600; flex-grow: 1; text-align: left; font-family: 'GMarketSans_m', sans-serif; }
+.shortcut-btn .arrow { color: #ccc; font-weight: bold; }
+.army-btn:hover { border-color: #2A5034; color: #2A5034; background-color: #f0fdf4; transform: translateY(-5px); }
+.navy-btn:hover { border-color: #001B69; color: #001B69; background-color: #eff3ff; transform: translateY(-5px); }
+.airforce-btn:hover { border-color: #3399FF; color: #3399FF; background-color: #f0f9ff; transform: translateY(-5px); }
+.marines-btn:hover { border-color: #CC101F; color: #CC101F; background-color: #fff0f0; transform: translateY(-5px); }
+.detail-divider { height: 1px; background-color: #e0e0e0; margin: 3rem 0 1rem 0; }
+@media (min-width: 769px) {
+    .general-grid { grid-template-columns: repeat(2, 1fr); }
+    .branch-grid { grid-template-columns: repeat(4, 1fr); }
+    .sub-grid { grid-template-columns: repeat(3, 1fr); }
+    .branch-grid .shortcut-btn { flex-direction: column; justify-content: center; text-align: center; height: 120px; }
+    .branch-grid .shortcut-btn .icon { margin-right: 0; margin-bottom: 10px; font-size: 2rem; }
+    .branch-grid .shortcut-btn .text { text-align: center; font-size: 1rem; }
+    .branch-grid .shortcut-btn .arrow { display: none; }
+}
+@media (max-width: 768px) {
+    .general-grid, .sub-grid { grid-template-columns: 1fr; }
+    .branch-grid { grid-template-columns: repeat(2, 1fr); }
+    .branch-grid .shortcut-btn { padding: 1rem; flex-direction: column; text-align: center; }
+    .branch-grid .shortcut-btn .icon { margin-right: 0; margin-bottom: 5px; }
+    .branch-grid .shortcut-btn .text { text-align: center; font-size: 1rem; }
+    .branch-grid .shortcut-btn .arrow { display: none; }
+}
+
+/* --- 2. 담당자 안내(표) 스타일 --- */
+.contact-table-wrap { width: 100%; overflow-x: auto; margin-top: 20px; }
+.contact-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+.contact-table th { background-color: #f1f4f9; color: #003762; padding: 15px; border-top: 2px solid #003762; border-bottom: 1px solid #d1d9e6; font-family: 'GMarketSans_b', sans-serif; font-size: 1rem; text-align: center; }
+.contact-table td { padding: 16px 12px; border-bottom: 1px solid #e9ecef; color: #444; vertical-align: middle; font-family: 'GMarketSans_m', sans-serif; font-size: 0.95rem; }
+.contact-table td.task { text-align: left; line-height: 1.6; word-break: keep-all; }
+.contact-table td.tel, .contact-table td.fax { text-align: center; white-space: nowrap; font-family: 'GMarketSans_m', sans-serif; font-weight: 500; }
+.contact-table a { color: #444; transition: color 0.2s; }
+.contact-table a:hover { color: #003762; text-decoration: underline; font-weight: bold; }
+@media (max-width: 768px) {
+    .contact-table { min-width: auto; }
+    .contact-table thead { display: none; }
+    .contact-table, .contact-table tbody, .contact-table tr, .contact-table td { display: block; width: 100%; }
+    .contact-table tr { margin-bottom: 15px; border: 1px solid #e1e1e1; border-radius: 12px; background: #fff; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+    .contact-table td { border-bottom: none; padding: 5px 0; text-align: left !important; }
+    .contact-table td.task { font-family: 'GMarketSans_b', sans-serif; color: #003762; font-size: 1.1rem; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #e9ecef; }
+    .contact-table td.tel::before { content: "📞 전화: "; color: #888; margin-right: 5px; font-size: 0.9rem; }
+    .contact-table td.fax::before { content: "📠 팩스: "; color: #888; margin-right: 5px; font-size: 0.9rem; }
+}
+
+/* --- 풋터 영역 --- */
+footer { background-color: #f8f9fa; border-top: 1px solid #e1e1e1; padding: 3rem 1rem; margin-top: 4rem; font-size: 0.9rem; color: #555; }
+.footer-container { max-width: 1000px; margin: 0 auto; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; margin-bottom: 1.5rem; }
+.footer-logo { height: 35px; width: auto; margin-bottom: 1rem; filter: grayscale(100%); opacity: 0.8; }
+footer address { font-style: normal; line-height: 1.6; }
+.footer-tel .bold { font-weight: bold; color: #333; font-size: 1.1rem; }
+.footer-quick-links { list-style: none; text-align: right; margin-bottom: 1rem; }
+.footer-quick-links li { margin-bottom: 8px; }
+.footer-quick-links a { text-decoration: none; color: #444; font-weight: 500; }
+.view-mode-toggle { width: 100%; text-align: center; margin: 15px 0; }
+.view-btn { background: none; border: none; cursor: pointer; font-size: 0.85rem; color: #555; padding: 0 5px; }
+.view-btn:hover { color: #003762; text-decoration: underline; font-weight: bold; }
+.view-mode-toggle .bar { color: #ccc; font-size: 0.8rem; margin: 0 2px; }
+@media (max-width: 768px) {
+    .footer-top { flex-direction: column; text-align: left; }
+    .footer-quick-links { text-align: left; justify-content: flex-start; margin-top: 20px; }
+}

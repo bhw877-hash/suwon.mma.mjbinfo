@@ -65,12 +65,17 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     margin-bottom: 2.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.intro-section h2 { color: #003762; margin-bottom: 1rem; font-size: 1.4rem; font-family: 'NexonMaplestory_l', sans-serif;}
+.intro-section h2 { color: #003762; margin-bottom: 1rem; font-size: 1.3rem; font-family: 'NexonMaplestory_l', sans-serif;}
 .intro-section p { color: #555; font-size: 1.05rem; word-break: keep-all; font-family: 'GMarketSans_m';}
 .highlight {
     color: #E4032E;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-family: 'NexonMaplestory_b', sans-serif;
+}
+.p-highlight {
+    color: #E4032E;
+    font-size: 1.05rem;
+    font-family: 'GMarketSans_b', sans-serif;
 }
 
 /* 2. 섹션 라벨 (공통) */
@@ -109,11 +114,23 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
 .shortcut-btn .text { font-size: 1.1rem; font-weight: 600; flex-grow: 1; text-align: left; font-family: 'GMarketSans_m', sans-serif; }
 .shortcut-btn .arrow { color: #ccc; font-weight: bold; }
 
-/* --- [핵심] 군별 버튼 선택 시(Hover) 테두리 색상 변경 --- */
-.army-btn:hover { border-color: #2A5034; color: #2A5034; background-color: #f0fdf4; }
-.navy-btn:hover { border-color: #001B69; color: #001B69; background-color: #eff3ff; }
-.airforce-btn:hover { border-color: #3399FF; color: #3399FF; background-color: #f0f9ff; }
-.marines-btn:hover { border-color: #CC101F; color: #CC101F; background-color: #fff0f0; }
+/* --- 군별 버튼 Hover 효과 --- */
+.army-btn:hover { 
+    border-color: #2A5034; color: #2A5034; background-color: #f0fdf4;
+    transform: translateY(-5px); /* 위로 5px 이동 */
+}
+.navy-btn:hover { 
+    border-color: #001B69; color: #001B69; background-color: #eff3ff;
+    transform: translateY(-5px); /* 위로 5px 이동 */
+}
+.airforce-btn:hover { 
+    border-color: #3399FF; color: #3399FF; background-color: #f0f9ff;
+    transform: translateY(-5px); /* 위로 5px 이동 */
+}
+.marines-btn:hover { 
+    border-color: #CC101F; color: #CC101F; background-color: #fff0f0;
+    transform: translateY(-5px); /* 위로 5px 이동 */
+}
 
 /* Hover 시 내부 텍스트 색상도 같이 변경 */
 .army-btn:hover .arrow, .navy-btn:hover .arrow, 

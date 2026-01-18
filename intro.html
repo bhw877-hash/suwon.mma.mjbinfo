@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모집병 제도 소개 - 경인지방병무청</title>
+    <link rel="stylesheet" href="./모집병이란/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="./index.html">
+                <img src="./code1.png" alt="정부 로고" />
+            </a>
+            <h1><a href="./index.html" class="header-link">경인지방병무청</a></h1>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="sub-header">
+            <h2 class="sub-title">모집병이란?</h2>
+            <a href="index.html" class="home-btn">홈으로</a>
+        </div>
+
+        <section class="section-card">
+            <div class="recruit-intro-text">
+                <p>
+                    <span class="highlight">모집병</span>이란, 육·해·공군·해병대 각 군이 필요로 하는 군사특기에 본인의 자격·면허·전공을 연계하여 군 복무를 할 수 있는 제도예요. 군 생활을 통해 <span class="highlight">자기계발과 경력 쌓기</span>를 실현할 수 있는 기회를 제공해요.<br><br>모집병에는 일반기술병, 전문특기병, 동반입대병 등 다양한 분야가 있어요. 아래 <span class="highlight">버튼을 누르면 각 군별 특징과 모집 분야를 확인</span>할 수 있어요.
+                </p>
+            </div>
+
+            <div class="intro-tab-container">
+                <button class="intro-tab" onclick="toggleIntro('army', this)" data-type="army">육군</button>
+                <button class="intro-tab" onclick="toggleIntro('navy', this)" data-type="navy">해군</button>
+                <button class="intro-tab" onclick="toggleIntro('airforce', this)" data-type="airforce">공군</button>
+                <button class="intro-tab" onclick="toggleIntro('marines', this)" data-type="marines">해병대</button>
+            </div>
+
+            <div id="intro-detail-box" class="process-detail-box">
+                <h4 id="intro-detail-title"></h4>
+                <div id="intro-detail-content"></div>
+            </div>
+
+        </section>
+
+    </div>
+	
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <a href="https://www.mma.go.kr/suwon/index.do"><img src="./code1.png" alt="정부 로고" class="footer-logo"></a>
+                    <address>
+                        <p>(우)16440 경기도 수원시 팔달구 고화로 120(화서동)</p>
+                        <p class="footer-tel">대표전화 <span class="bold">1588-9090</span> (평일 09:00 ~ 18:00)</p>
+                    </address>
+                </div>
+
+                <div class="footer-right">
+                    <ul class="footer-quick-links">
+                        <li><a href="https://mwpt.mma.go.kr/caisBMHS/index_mwps.jsp?menuNo=22009">병무민원 헌장 &gt;</a></li>
+                        <li><a href="https://www.mma.go.kr/festival/index.do">현역병 입영문화제 &gt;</a></li>
+                        <li><a href="https://mma.go.kr/suwon/contents.do?mc=mma0000477">찾아오시는 길 &gt;</a></li>
+                        <li><a href="https://mma.go.kr/suwon/contents.do?mc=mma0000472">지방청 소개 &gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="view-mode-toggle">
+                <button onclick="setViewMode('pc')" class="view-btn">PC 버전</button>
+                <span class="bar">|</span>
+                <button onclick="setViewMode('mobile')" class="view-btn">모바일 버전</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./모집병이란/script.js"></script>
+</body>
+</html>
