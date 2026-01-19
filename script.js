@@ -28,3 +28,22 @@ function setViewMode(mode) {
     }
 }
 
+/* --- 모바일 앱 가이드: 아코디언 기능 --- */
+function toggleAppStep(element) {
+    // PC 화면(768px 초과)에서는 클릭 이벤트 무시
+    if (window.innerWidth > 768) return;
+
+    // 1. 이미 열려있는지 확인
+    const isActive = element.classList.contains('active');
+
+    // 2. 모든 단계 닫기 (하나만 열리게 하려면 이 부분 유지, 다 열리게 하려면 삭제)
+    const allSteps = document.querySelectorAll('.app-step');
+    allSteps.forEach(step => {
+        step.classList.remove('active');
+    });
+
+    // 3. 클릭한 단계가 닫혀있었다면 열기
+    if (!isActive) {
+        element.classList.add('active');
+    }
+}
