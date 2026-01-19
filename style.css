@@ -65,15 +65,15 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     margin-bottom: 2.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.intro-section h2 { color: #333; margin-bottom: 1rem; font-size: 1.3rem; font-family: 'NexonMaplestory_l', sans-serif;}
+.intro-section h2 { color: #555; margin-bottom: 1rem; font-size: 1.3rem; font-family: 'NexonMaplestory_l', sans-serif;}
 .intro-section p { color: #555; font-size: 1.05rem; word-break: keep-all; font-family: 'GMarketSans_m';}
 .highlight {
-    color: #FEA500;
+    color: #FF8D01;
     font-size: 1.3rem;
     font-family: 'NexonMaplestory_b', sans-serif;
 }
 .highlight2 {
-    color: #3A5485;
+    color: #134D85;
     font-size: 1.3rem;
     font-family: 'NexonMaplestory_b', sans-serif;
 }
