@@ -29,7 +29,7 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     font-family: 'GMarketSans_m', sans-serif; color: #0275D8; font-size: 1.05rem;
     margin-bottom: 30px; word-break: keep-all;
 }
-.highlight { color: #E4032E; font-size: 1.05rem; font-family: 'GMarketSans_b', sans-serif; }
+.highlight { color: #FB8C21; font-size: 1.05rem; font-family: 'GMarketSans_b', sans-serif; }
 
 /* --- [통합] 상세 박스 스타일 (지원절차 & 모집병소개 공통) --- */
 .process-detail-box {

@@ -40,7 +40,7 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     font-family: 'GMarketSans_m', sans-serif; color: #555; font-size: 1.05rem;
     margin-bottom: 30px; word-break: keep-all;
 }
-.highlight { color: #E4032E; font-size: 1.05rem; font-family: 'GMarketSans_b', sans-serif; }
+.highlight { color: #FB8C21; font-size: 1.05rem; font-family: 'GMarketSans_b', sans-serif; }
 
 /* --- 메인 페이지 스타일 --- */
 .intro-section { background: white; padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
