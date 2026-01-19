@@ -71,23 +71,74 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
 
 
 /* --- 모집병 제도 소개 (탭) --- */
-.intro-tab-container { display: flex; gap: 10px; margin-bottom: 25px; }
-.intro-tab {
-    flex: 1; padding: 15px 0; border: 1px solid #e1e1e1; background-color: #fff; color: #555;
-    font-size: 1.1rem; font-family: 'GMarketSans_b', sans-serif; border-radius: 12px; cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.intro-tab-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 }
-.intro-tab[data-type="army"]:hover { border-color: #2A5034; color: #2A5034; background-color: #f0fdf4; transform: translateY(-5px); }
-.intro-tab[data-type="navy"]:hover { border-color: #001B69; color: #001B69; background-color: #eff3ff; transform: translateY(-5px); }
-.intro-tab[data-type="airforce"]:hover { border-color: #3399FF; color: #3399FF; background-color: #f0f9ff; transform: translateY(-5px); }
-.intro-tab[data-type="marines"]:hover { border-color: #CC101F; color: #CC101F; background-color: #fff0f0; transform: translateY(-5px); }
 
-.intro-tab.active[data-type="army"] { background-color: #2A5034; color: white; border-color: #2A5034; transform: translateY(0); box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-.intro-tab.active[data-type="navy"] { background-color: #001B69; color: white; border-color: #001B69; transform: translateY(0); box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-.intro-tab.active[data-type="airforce"] { background-color: #3399FF; color: white; border-color: #3399FF; transform: translateY(0); box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-.intro-tab.active[data-type="marines"] { background-color: #CC101F; color: white; border-color: #CC101F; transform: translateY(0); box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+/* 탭 버튼 기본 모습 */
+.intro-tab {
+    flex: 1;
+    padding: 15px 0;
+    border: 1px solid #e1e1e1; /* 기본 회색 테두리 */
+    background-color: #fff;
+    color: #555;
+    font-size: 1.1rem;
+    font-family: 'GMarketSans_b', sans-serif;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); /* 부드러운 움직임 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-/* --- 상세 박스 스타일 (덜컹거림 해결) --- */
+/* --- 마우스 올렸을 때(Hover) 효과 --- */
+.intro-tab[data-type="army"]:hover {
+    border-color: #2A5034; color: #2A5034; background-color: #f0fdf4;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(42, 80, 52, 0.15);
+}
+.intro-tab[data-type="navy"]:hover {
+    border-color: #001B69; color: #001B69; background-color: #eff3ff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 27, 105, 0.15);
+}
+.intro-tab[data-type="airforce"]:hover {
+    border-color: #3399FF; color: #3399FF; background-color: #f0f9ff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(51, 153, 255, 0.15);
+}
+.intro-tab[data-type="marines"]:hover {
+    border-color: #CC101F; color: #CC101F; background-color: #fff0f0;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(204, 16, 31, 0.15);
+}
+
+
+/* --- 활성화(Active - 클릭된 상태) 스타일 --- */
+.intro-tab.active[data-type="army"] {
+    background-color: #2A5034; color: white; border-color: #2A5034;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.intro-tab.active[data-type="navy"] {
+    background-color: #001B69; color: white; border-color: #001B69;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.intro-tab.active[data-type="airforce"] {
+    background-color: #3399FF; color: white; border-color: #3399FF;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.intro-tab.active[data-type="marines"] {
+    background-color: #CC101F; color: white; border-color: #CC101F;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* --- 내용 표시 박스 (슬라이딩 애니메이션 적용) --- */
 .intro-content-area {
     background: #fff;
     border-radius: 12px;
@@ -101,7 +152,7 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     opacity: 0; 
     margin-top: 0;
     
-    /* 부드러운 애니메이션 */
+    /* 부드러운 슬라이딩 효과 설정 */
     transition: 
         max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
         padding 0.4s cubic-bezier(0.25, 1, 0.5, 1),
@@ -109,17 +160,16 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
         opacity 0.4s ease, 
         border-color 0.4s ease;
     
-    /* 성능 향상 */
     will-change: max-height, margin-top, padding;
 }
 
 /* 활성화(Active) 되면 펼쳐짐 */
 .intro-content-area.active {
-    max-height: 800px; /* 충분한 높이 */
-    padding: 2rem;     /* 상하 패딩 복구 */
-    border-color: #e1e1e1; /* 테두리 색상 등장 */
-    opacity: 1;
-    margin-top: 15px;   /* 마진 복구 */
+    max-height: 800px; 
+    padding: 2rem; /* 패딩 복구 */
+    border: 1px solid #e1e1e1; /* 테두리 복구 */
+    opacity: 1; /* 내용 선명하게 */
+    margin-top: 15px; /* 버튼과 약간의 간격 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
@@ -140,10 +190,17 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
 }
 .intro-list li { margin-bottom: 8px; }
 
-/* 모바일 반응형 */
+/* 모바일 반응형 (가독성 개선 적용) */
 @media (max-width: 768px) {
     .intro-tab-container { flex-direction: column; gap: 10px; }
     .intro-tab { width: 100%; flex: none; }
+
+    /* [핵심] 모바일 상세 박스 패딩 최적화 */
+    .intro-content-area { padding: 0 15px; } /* 닫혔을 때 */
+    .intro-content-area.active { padding: 20px 15px; } /* 열렸을 때 좌우 여백 줄임 */
+    
+    /* 모바일 폰트 크기 미세 조정 */
+    .intro-content p { font-size: 1rem; }
 }
 
 /* --- 풋터 --- */
