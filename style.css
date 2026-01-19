@@ -68,17 +68,17 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
 .intro-section h2 { color: #555; margin-bottom: 1rem; font-size: 1.3rem; font-family: 'NexonMaplestory_l', sans-serif;}
 .intro-section p { color: #555; font-size: 1.05rem; word-break: keep-all; font-family: 'GMarketSans_m';}
 .highlight {
-    color: #DE802B;
+    color: #F18101;
     font-size: 1.3rem;
     font-family: 'NexonMaplestory_b', sans-serif;
 }
 .highlight2 {
-    color: #5C6F2B;
+    color: #268D3A;
     font-size: 1.3rem;
     font-family: 'NexonMaplestory_b', sans-serif;
 }
 .p-highlight {
-    color: #DE802B;
+    color: #F18101;
     font-size: 1.05rem;
     font-family: 'GMarketSans_b', sans-serif;
 }
