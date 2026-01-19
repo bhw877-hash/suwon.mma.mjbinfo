@@ -71,7 +71,6 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     text-emphasis-color: #268D3A;
     /* 점의 위치를 글자 위(over)로 지정합니다. */
     text-emphasis-position: over;
-    
     /* (선택사항) 점과 글자 사이의 간격을 약간 벌리고 싶다면 아래 주석을 해제하세요. */
     /* padding-top: 0.2em; */
 }
@@ -260,13 +259,12 @@ footer address { font-style: normal; line-height: 1.6; }
 }
 
 .app-guide-intro {
-    font-family: 'GMarketSans_m', sans-serif;
+    font-family: 'NexonMaplestory_b';
     font-size: 1.15rem; color: #333;
     margin-bottom: 25px; padding-bottom: 20px;
     border-bottom: 1px solid #eee; /* 점선 -> 실선으로 부드럽게 */
 }
 .app-guide-intro .highlight { font-size: 1.2rem; } /* 강조 글씨 약간 키움 */
-
 
 .app-step-container {
     display: flex; justify-content: space-between; align-items: flex-start;
