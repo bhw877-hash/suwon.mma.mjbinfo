@@ -1,4 +1,4 @@
-/* --- 기본 스타일 초기화 --- */
+	/* --- 기본 스타일 초기화 --- */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
 body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
 a { text-decoration: none; color: inherit; }
@@ -299,6 +299,7 @@ footer address { font-style: normal; line-height: 1.6; }
 /* 헤더 영역 */
 .step-header { display: flex; flex-direction: column; align-items: center; width: 100%; }
 .step-circle {
+    flex-shrink: 0;
     width: 34px; height: 34px; /* 원 크기 약간 증가 */
     background-color: #003762;
     color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -337,27 +338,19 @@ footer address { font-style: normal; line-height: 1.6; }
 
 .app-detail p {
     font-family: 'GMarketSans_m', sans-serif; font-size: 0.95rem;
-    color: #555; line-height: 1.7; margin-bottom: 20px; padding: 0 10px;
-    background-color: rgba(255,255,255,0.6); /* 텍스트 가독성을 위한 연한 배경 */
-    padding: 15px; border-radius: 10px; /* 텍스트 박스 둥글게 */
+    color: #555; line-height: 1.7; margin-bottom: 20px; 
+    /* 텍스트 가독성을 위해 패딩 조정 */
+    padding: 15px; 
+    background-color: rgba(255,255,255,0.6); border-radius: 10px;
 }
-.app-detail highlight1 {
-    font-family: 'GMarketSans_b', sans-serif; font-size: 0.95rem;
-    color: #555; line-height: 1.7; margin-bottom: 20px; padding: 0 10px;
-    background-color: rgba(255,255,255,0.6); /* 텍스트 가독성을 위한 연한 배경 */
-    padding: 15px; border-radius: 10px; /* 텍스트 박스 둥글게 */
-}
-
 
 /* --- [수정됨] 이미지 컨테이너 (잘림 현상 해결) --- */
 .app-img-container {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    /* [핵심] 상단 패딩(padding-top)을 추가하여 hover시 이미지가 커져도 잘리지 않게 공간 확보 */
+    display: flex; gap: 15px; overflow-x: auto;
     padding: 20px 10px 15px 10px; 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none; scrollbar-width: none;
+    /* [터치 개선] 이미지 영역 터치 시 부드럽게 */
+    cursor: default; 
 }
 .app-img-container::-webkit-scrollbar { display: none; }
 
@@ -378,35 +371,49 @@ footer address { font-style: normal; line-height: 1.6; }
 }
 
 
-/* --- 모바일 반응형 (세로 배치) --- */
+/* --- 모바일 반응형 (세로 배치 & 가독성 최적화) --- */
 @media (max-width: 768px) {
-    .app-step-container { flex-direction: column; gap: 15px; }
+    .app-guide-box { padding: 1.2rem; } /* 전체 박스 패딩 감소 */
+
+    .app-step-container { flex-direction: column; gap: 12px; }
+    
     .app-step {
-        width: 100%; background-color: #f8fbff; /* 모바일 기본 배경 */
-        align-items: flex-start; padding: 20px;
+        width: 100%; background-color: #f8fbff;
+        align-items: flex-start; 
+        /* [가독성 개선] 내부 패딩을 15px로 줄여 내용 공간 확보 */
+        padding: 15px; 
         border: 2px solid transparent;
     }
-    /* 모바일 활성화 상태도 부드럽게 */
     .app-step.active {
         background-color: #fff;
-        border-color: #cce5ff; /* 부드러운 하늘색 테두리 */
+        border-color: #cce5ff;
         box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     }
 
     .step-header { flex-direction: row; justify-content: flex-start; }
-    .step-circle { margin-bottom: 0; margin-right: 15px; }
+    .step-circle { margin-bottom: 0; margin-right: 12px; } /* 간격 미세 조정 */
+    
     .step-desc { flex-grow: 1; text-align: left; }
-    .step-desc span br { display: none; }
-    .toggle-arrow { margin-top: 0; display: block; }
+    .step-desc span br { display: none; } /* 설명 한 줄로 */
+    
+    .toggle-arrow { margin-top: 0; display: block; margin-left: 10px; }
+    
     .step-arrow-separator { display: none; }
     
+    /* [가독성 개선] 모바일에서 상세 내용 좌우 여백 제거 */
+    .app-detail { padding-top: 15px; }
+    .app-detail p { 
+        margin-bottom: 15px; 
+        background-color: #f9f9f9; /* 텍스트 배경색 약간 진하게 */
+        padding: 12px; /* 텍스트 박스 내부 패딩 */
+        font-size: 0.9rem; /* 글자 크기 최적화 */
+    }
+
     /* 모바일 이미지 높이 조정 */
     .app-img-container img { height: 260px; }
-    /* 모바일에선 hover 효과 제거 (터치 시 이상 동작 방지) */
     .app-img-container img:hover { transform: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
 }
 
-/* 부드러운 등장 애니메이션 정의 */
 @keyframes fadeSlideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
