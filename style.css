@@ -421,3 +421,22 @@ footer address { font-style: normal; line-height: 1.6; }
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* 구조 보정: 기존 디자인은 유지하고 PC/모바일에서 깨짐만 방지 */
+html { overflow-y: scroll; }
+.app-step, .step-desc { min-width: 0; }
+@media (min-width: 769px) {
+    .app-step-container {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        align-items: stretch;
+    }
+    .step-arrow-separator { display: none; }
+    .app-step { height: 100%; }
+    .step-desc strong, .step-desc span { word-break: keep-all; overflow-wrap: break-word; }
+}
+@media (max-width: 768px) {
+    .app-step-container { align-items: stretch; }
+    .app-step { width: 100%; }
+}

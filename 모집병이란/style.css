@@ -70,6 +70,13 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
         .intro-list li { margin-bottom: 8px; font-family: 'GMarketSans_m', sans-serif; }
 
 
+/* 상세 박스 위치 안정화: PC는 기존처럼 버튼 묶음 아래, 모바일은 각 버튼 바로 아래 */
+.intro-detail-mobile { display: none; }
+.intro-detail-desktop { display: block; }
+.section-card { overflow-anchor: none; }
+.process-detail-box { width: 100%; }
+
+
 /* --- 모집병 제도 소개 (탭) --- */
 .intro-tab-container {
     display: flex;
@@ -195,6 +202,10 @@ header h1 { font-size: 1.5rem; letter-spacing: 1px; color: white; margin: 0; }
     .intro-tab-container { flex-direction: column; gap: 10px; }
     .intro-tab { width: 100%; flex: none; }
 
+    .intro-detail-desktop { display: none; }
+    .intro-detail-mobile { display: block; }
+    .process-detail-box.active { margin-top: 10px; margin-bottom: 10px; padding: 20px 15px; }
+
     /* [핵심] 모바일 상세 박스 패딩 최적화 */
     .intro-content-area { padding: 0 15px; } /* 닫혔을 때 */
     .intro-content-area.active { padding: 20px 15px; } /* 열렸을 때 좌우 여백 줄임 */
@@ -220,4 +231,18 @@ footer address { font-style: normal; line-height: 1.6; }
 @media (max-width: 768px) {
     .footer-top { flex-direction: column; text-align: left; }
     .footer-quick-links { text-align: left; justify-content: flex-start; margin-top: 20px; }
+}
+/* 기능 보정: 모집병이란 상세 박스 잘림 방지 */
+/*
+   내용 높이를 JS가 계산한 max-height에 묶어두면 웹폰트 로딩/기기 폭 변화 시
+   마지막 줄이 잘릴 수 있어, 열린 상태에서는 실제 콘텐츠 높이대로 자연 확장합니다.
+   디자인 색상·그림자·여백은 기존 값을 그대로 사용합니다.
+*/
+.process-detail-box.active {
+    max-height: none !important;
+    overflow: visible !important;
+}
+.process-detail-box:not(.active) {
+    max-height: 0 !important;
+    overflow: hidden !important;
 }

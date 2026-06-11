@@ -33,12 +33,31 @@
 
             <div class="intro-tab-container">
                 <button class="intro-tab" onclick="toggleIntro('army', this)" data-type="army">육군</button>
+                <div id="intro-detail-army" class="process-detail-box intro-detail-mobile" data-detail-for="army">
+                    <h4></h4>
+                    <div class="intro-detail-content"></div>
+                </div>
+
                 <button class="intro-tab" onclick="toggleIntro('navy', this)" data-type="navy">해군</button>
+                <div id="intro-detail-navy" class="process-detail-box intro-detail-mobile" data-detail-for="navy">
+                    <h4></h4>
+                    <div class="intro-detail-content"></div>
+                </div>
+
                 <button class="intro-tab" onclick="toggleIntro('airforce', this)" data-type="airforce">공군</button>
+                <div id="intro-detail-airforce" class="process-detail-box intro-detail-mobile" data-detail-for="airforce">
+                    <h4></h4>
+                    <div class="intro-detail-content"></div>
+                </div>
+
                 <button class="intro-tab" onclick="toggleIntro('marines', this)" data-type="marines">해병대</button>
+                <div id="intro-detail-marines" class="process-detail-box intro-detail-mobile" data-detail-for="marines">
+                    <h4></h4>
+                    <div class="intro-detail-content"></div>
+                </div>
             </div>
 
-            <div id="intro-detail-box" class="process-detail-box">
+            <div id="intro-detail-box" class="process-detail-box intro-detail-desktop">
                 <h4 id="intro-detail-title"></h4>
                 <div id="intro-detail-content"></div>
             </div>

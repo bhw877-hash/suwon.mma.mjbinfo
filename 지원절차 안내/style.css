@@ -171,3 +171,74 @@ footer address { font-style: normal; line-height: 1.6; }
     .footer-top { flex-direction: column; text-align: left; }
     .footer-quick-links { text-align: left; justify-content: flex-start; margin-top: 20px; }
 }
+/* 기능 보정: 지원절차 안내 상세 박스 안정화
+   - 모바일에서는 누른 STEP 바로 아래의 고정 패널만 열립니다.
+   - DOM을 옮기지 않아 풋터가 위로 튀는 현상을 방지합니다.
+   - max-height 고정값을 쓰지 않아 긴 내용도 하단이 잘리지 않습니다. */
+.process-container {
+    align-items: stretch;
+}
+
+.process-detail-box {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    max-height: none !important;
+    overflow: hidden !important;
+    padding: 0 25px;
+    opacity: 0;
+    margin-top: 0;
+    border-color: transparent;
+    transition:
+        grid-template-rows 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        padding 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        margin-top 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        margin-bottom 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.process-detail-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.process-detail-box.active {
+    grid-template-rows: 1fr;
+    padding: 25px;
+    border-color: #cce5ff;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.process-detail-box.active .process-detail-inner {
+    overflow: visible;
+}
+
+.procedure-detail-mobile {
+    display: none;
+}
+
+.procedure-detail-desktop {
+    display: grid;
+}
+
+@media (max-width: 768px) {
+    .procedure-detail-desktop {
+        display: none;
+    }
+
+    .procedure-detail-mobile {
+        display: grid;
+    }
+
+    .process-detail-box {
+        padding: 0 15px;
+    }
+
+    .process-detail-box.active {
+        padding: 20px 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
